@@ -9,5 +9,5 @@ $max_repeat = 5;
 
 $pdf_mode = 4;
 
-$aux_dir = 'build/';
+$aux_dir = 'aux/';
 $out_dir = 'build/';
