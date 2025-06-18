@@ -53,7 +53,6 @@
     "*.fdb_latexmk",
     "*.snm",
     "*.nav",
-    "*.dvi",
-    "*.synctex.gz"
+    "*.dvi"
   ],
 }

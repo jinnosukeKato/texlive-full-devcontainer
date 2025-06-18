@@ -3,7 +3,7 @@
 # lualatex
 $pdf_mode = 4;
 $max_repeat = 5;
-$latex = 'lualatex -synctex=1 -halt-on-error -file-line-error  %O %S';
+$lualatex = 'lualatex -synctex=1 -halt-on-error -file-line-error  %O %S';
 
 # bibtex
 $bibtex_use = 2;
