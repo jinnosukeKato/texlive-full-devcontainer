@@ -15,7 +15,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # install texlive-full.
-RUN wget https://texlive.texjp.org/2024/tlnet/install-tl-unx.tar.gz && \
+RUN wget https://texlive.texjp.org/2025/tlnet/install-tl-unx.tar.gz && \
     tar xvf install-tl-unx.tar.gz && \
     cd install-tl-* && \
     echo "selected_scheme scheme-full" > ./texlive.profile && \
@@ -25,15 +25,13 @@ RUN wget https://texlive.texjp.org/2024/tlnet/install-tl-unx.tar.gz && \
     cd .. && \
     rm -rf install-tl-*
 
-# resolve dependencies of latexindent.
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    libyaml-tiny-perl \
-    libfile-homedir-perl \
-    libunicode-linebreak-perl \
-    && rm -rf /var/lib/apt/lists/*
+# install tex-fmt
+RUN wget https://github.com/latex-lsp/texlab/releases/download/v5.23.0/texlab-x86_64-linux.tar.gz && \
+    tar xvf texlab-x86_64-linux.tar.gz && \
+    mv texlab /usr/local/bin/ && \
+    rm texlab-x86_64-linux.tar.gz
 
 USER vscode
-RUN echo 'export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH' >> ~/.bashrc
-RUN echo 'export PATH=/usr/local/texlive/2024/bin/aarch64-linux:$PATH' >> ~/.bashrc
+RUN echo 'export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH' >> ~/.bashrc
+RUN echo 'export PATH=/usr/local/texlive/2025/bin/aarch64-linux:$PATH' >> ~/.bashrc
 USER root

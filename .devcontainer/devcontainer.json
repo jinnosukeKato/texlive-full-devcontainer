@@ -1,12 +1,10 @@
 {
     "name": "texlive-full-devcontainer",
-    "dockerFile": "Dockerfile.textlint",
+    "dockerFile": "Dockerfile",
     "customizations": {
         "vscode": {
             "extensions": [
-                "james-yu.latex-workshop",
-                "hediet.vscode-drawio",
-                "3w36zj6.textlint"
+                "james-yu.latex-workshop"
             ]
         }
     }
