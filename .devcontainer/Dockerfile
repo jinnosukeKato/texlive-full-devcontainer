@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/base:debian-11
+FROM mcr.microsoft.com/vscode/devcontainers/base:debian
 
 LABEL org.opencontainers.image.source=https://github.com/tbistr/texlive-full-devcontainer
 
@@ -26,10 +26,10 @@ RUN wget https://texlive.texjp.org/2025/tlnet/install-tl-unx.tar.gz && \
     rm -rf install-tl-*
 
 # install tex-fmt
-RUN wget https://github.com/latex-lsp/texlab/releases/download/v5.23.0/texlab-x86_64-linux.tar.gz && \
-    tar xvf texlab-x86_64-linux.tar.gz && \
-    mv texlab /usr/local/bin/ && \
-    rm texlab-x86_64-linux.tar.gz
+RUN wget https://github.com/WGUNDERWOOD/tex-fmt/releases/download/v0.5.4/tex-fmt-x86_64-linux.tar.gz && \
+    tar xvf tex-fmt-x86_64-linux.tar.gz && \
+    mv tex-fmt /usr/local/bin/ && \
+    rm tex-fmt-x86_64-linux.tar.gz
 
 USER vscode
 RUN echo 'export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH' >> ~/.bashrc
