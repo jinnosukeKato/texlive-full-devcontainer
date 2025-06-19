@@ -9,13 +9,13 @@
     {
       "name": "latexmk",
       "tools": [
-        "latexmk"
+        "latexmk-with-texfot"
       ]
     },
   ],
   "latex-workshop.latex.tools": [
     {
-      "name": "latexmk",
+      "name": "latexmk-with-texfot",
       "command": "texfot",
       "args": [
         "latexmk"
